@@ -31,7 +31,11 @@ const SignupForm = () => {
    const form = useForm<z.infer<typeof SignupValidation>>({
     resolver: zodResolver(SignupValidation),
     defaultValues: {
+      name: '',
       username: "",
+      email: '',
+      password: '',
+
     },
   })
  
@@ -44,8 +48,18 @@ const SignupForm = () => {
   
   
   return (
-    <div>
+   
 <Form {...form}>
+
+<div className="sm:w-420 flex-center flex-col">
+  <img src="/assests/images/logo.svg" alt="logo"/>
+  <h2 className="h3-bold md:h2-bold pt-5 sm:pt-12">Create a new Account</h2>
+  <p>To Use Snapgram Enter Your Accoubt Details</p>
+
+
+</div>
+
+
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
         <FormField
           control={form.control}
@@ -67,7 +81,7 @@ const SignupForm = () => {
       </form>
     </Form>
 
-    </div>
+   
   )
 }
 
