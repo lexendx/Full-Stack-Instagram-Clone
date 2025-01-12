@@ -1,6 +1,6 @@
 import { ID } from "appwrite";
 import { INewUser } from "@/types";
-import { account } from "@/appwriteConfig"; // Ensure this is properly imported and initialized
+import { account } from "./config"; // Ensure this is properly imported and initialized
 
 export async function createUserAccount(user: INewUser) {
     try {
